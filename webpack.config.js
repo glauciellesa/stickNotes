@@ -26,6 +26,15 @@ module.exports = {
     filename: "script.js",
     path: __dirname + "/public",
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "./public"),
+    },
+
+    compress: true,
+    port: 8080,
+  },
+
   plugins: [
     new MiniCssExtractPlugin({
       filename: "style.css",
