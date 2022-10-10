@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky notes</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="headingId" class="heading">
+      <h1>Stick-It Notes</h1>
+      <p id="owner">By Glaucielle</p>
+    </div>
+    <div class="containerForm">
+      <form id="inputForm" class="form">
+        <input
+          type="text"
+          class="inputText"
+          placeholder="Title"
+          id="new-note-title-input"
+          autocomplete="off"
+          required
+          autofocus
+        />
+        <input
+          class="inputText"
+          type="text"
+          placeholder="Note Content"
+          id="new-note-body-input"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="bnt">Create Note</button>
+      </form>
+    </div>
+    <h3 id="no-notes" class="noNotes">No Notes Found, Add one!</h3>
+    <ul id="notes" class="notes"></ul>
+  </body>
+</html>
