@@ -2,11 +2,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   mode: "development",
-  entry: "./src/script.js",
+  entry: "./src/entrypoint.js",
   output: {
-    filename: "main.js",
+    filename: "script.js",
     path: __dirname + "/public",
   },
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {

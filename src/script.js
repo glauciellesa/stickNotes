@@ -22,3 +22,5 @@ bntSubmit.addEventListener("click", (e) => {
   li.appendChild(bodyLi)
   bodyLi.appendChild(textbodyLi)
 })
+
+export default bntSubmit
