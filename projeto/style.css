@@ -72,8 +72,26 @@ body > * {
   -webkit-tap-highlight-color: transparent;
 }
 
-.noNotes {
+ul li {
+  color: #333;
+  background: rgb(270, 180, 0);
+  display: block;
+  height: 10em;
+  width: 10em;
+  padding: 1em;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  margin: 1em;
+  float: left;
+  position: relative;
 }
 
-.notes {
+ul li h2 {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+ul li p {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 18px;
 }
