@@ -93,63 +93,67 @@ body > * {
   cursor: pointer;
 }
 
-li {
+.notes {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.noNotes {
+}
+
+.listNotes {
   color: #333;
   background: rgb(270, 180, 0);
   display: flex;
   flex-direction: column;
+  overflow-wrap: break-word;
   height: 160px;
   width: 160px;
-  padding: 16px;
+  padding: 10px;
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   margin: 16px;
-  float: left;
-  position: relative;
   transform: rotate(-4deg);
   -moz-transform: rotate(-4deg);
 }
 
-li h2 {
+.listNotes h2 {
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-li p {
+.listNotes p {
   font-family: "Reenie Beanie", cursive;
   font-size: 18px;
 }
 
-li:nth-child(2n) {
+.listNotes:nth-child(2n) {
   transform: rotate(4deg);
   -moz-transform: rotate(4deg);
-  position: relative;
   top: 5px;
   background: #ff5733;
 }
 
-li:nth-child(3n) {
+.listNotes:nth-child(3n) {
   transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
-  position: relative;
   top: -5px;
   background: #77d8d8;
 }
 
-li:nth-child(4n) {
+.listNotes:nth-child(4n) {
   transform: rotate(5deg);
   -moz-transform: rotate(5deg);
-  position: relative;
   top: -5px;
   background: #e5c7ea;
 }
 
-li:hover,
-li:focus {
+.listNotes:hover,
+.listNotes:focus {
   box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   transform: scale(1.25);
   -moz-transform: scale(1.25);
-  position: relative;
   z-index: 5;
 }

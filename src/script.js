@@ -11,6 +11,8 @@ bntSubmit.addEventListener("click", (e) => {
   const titleLi = document.createElement("h2")
   const bodyLi = document.createElement("p")
   const xButton = document.createElement("button")
+
+  li.classList.add("listNotes")
   xButton.classList.add("bntDelete")
 
   const xText = document.createTextNode("X")
