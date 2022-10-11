@@ -62,7 +62,8 @@ body > * {
   background: rgb(270, 180, 0);
   border: none;
   color: #333;
-  padding: 20px;
+  padding: 15px;
+  width: 130px;
   border: 2px solid rgb(270, 180, 0);
   background-color: rgb(270, 180, 0);
   border-radius: 40px;
@@ -83,6 +84,8 @@ ul li {
   margin: 1em;
   float: left;
   position: relative;
+  transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
 }
 
 ul li h2 {
@@ -94,4 +97,38 @@ ul li h2 {
 ul li p {
   font-family: "Reenie Beanie", cursive;
   font-size: 18px;
+}
+
+ul li:nth-child(2n) {
+  transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+  background: #ff5733;
+}
+
+ul li:nth-child(3n) {
+  transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+  background: #77d8d8;
+}
+
+ul li:nth-child(4n) {
+  transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  position: relative;
+  top: -5px;
+  background: #e5c7ea;
+}
+
+ul li:hover,
+ul li:focus {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  position: relative;
+  z-index: 5;
 }
