@@ -5,6 +5,7 @@ bntSubmit.addEventListener("click", (e) => {
 
   const titleInput = document.getElementById("new-note-title-input").value
   const noteBodyInput = document.getElementById("new-note-body-input").value
+
   const ul = document.getElementById("notes")
 
   const li = document.createElement("li")
@@ -32,6 +33,19 @@ bntSubmit.addEventListener("click", (e) => {
     alert("Both Title and body of the note must be provided")
     return
   }
+
+  const stickString = window.localStorage.getItem("stick")
+  if (!stickString) {
+    window.localStorage.setItem("stick", JSON.stringify([]))
+  }
+  const stickTable = JSON.parse(stickString) || []
+  stickTable.push({
+    title: titleInput,
+    body: noteBodyInput,
+  })
+  window.localStorage.setItem("stick", JSON.stringify(stickTable))
 })
+
+const bntDelete = document.querySelector
 
 export default bntSubmit
