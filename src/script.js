@@ -3,23 +3,33 @@ const bntSubmit = document.getElementById("bntSubmit")
 bntSubmit.addEventListener("click", (e) => {
   e.preventDefault()
 
-  const titleInput = document.getElementById("new-note-title-input")
-  const noteBodyInput = document.getElementById("new-note-body-input")
+  const titleInput = document.getElementById("new-note-title-input").value
+  const noteBodyInput = document.getElementById("new-note-body-input").value
   const ul = document.getElementById("notes")
 
   const li = document.createElement("li")
   const titleLi = document.createElement("h2")
   const bodyLi = document.createElement("p")
+  const xButton = document.createElement("button")
+  xButton.classList.add("bntDelete")
 
-  const textH2Li = document.createTextNode(titleInput.value)
-  const textbodyLi = document.createTextNode(noteBodyInput.value)
+  const xText = document.createTextNode("X")
+  const textH2Li = document.createTextNode(titleInput)
+  const textbodyLi = document.createTextNode(noteBodyInput)
 
-  ul.appendChild(li)
-  li.appendChild(titleLi)
-  titleLi.appendChild(textH2Li)
+  if (titleInput && noteBodyInput) {
+    ul.appendChild(li)
+    li.appendChild(titleLi)
+    titleLi.appendChild(textH2Li)
+    xButton.appendChild(xText)
 
-  li.appendChild(bodyLi)
-  bodyLi.appendChild(textbodyLi)
+    li.appendChild(bodyLi)
+    li.appendChild(xButton)
+    bodyLi.appendChild(textbodyLi)
+  } else {
+    alert("Both Title and body of the note must be provided")
+    return
+  }
 })
 
 export default bntSubmit
