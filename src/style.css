@@ -125,25 +125,33 @@ body > * {
 }
 
 .listNotes p {
-  font-family: "Reenie Beanie", cursive;
-  font-size: 18px;
+  font-family: "Gloria Hallelujah", cursive;
+  line-height: 0.5cm;
+  font-size: 14px;
 }
 
-.listNotes:nth-child(2n) {
+.listNotes-0 {
+  transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  top: 5px;
+  background: rgb(270, 180, 0);
+}
+
+.listNotes-1 {
   transform: rotate(4deg);
   -moz-transform: rotate(4deg);
   top: 5px;
   background: #ff5733;
 }
 
-.listNotes:nth-child(3n) {
+.listNotes-2 {
   transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
   top: -5px;
   background: #77d8d8;
 }
 
-.listNotes:nth-child(4n) {
+.listNotes-3 {
   transform: rotate(5deg);
   -moz-transform: rotate(5deg);
   top: -5px;

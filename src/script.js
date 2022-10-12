@@ -1,11 +1,8 @@
-const bntSubmit = document.getElementById("bntSubmit")
+const checkStickExist = document.addEventListener("load", () => {
+  document.getElementById("no-notes")
+})
 
-bntSubmit.addEventListener("click", (e) => {
-  e.preventDefault()
-
-  const titleInput = document.getElementById("new-note-title-input").value
-  const noteBodyInput = document.getElementById("new-note-body-input").value
-
+const createStick = (title, stickBody) => {
   const ul = document.getElementById("notes")
 
   const li = document.createElement("li")
@@ -14,13 +11,14 @@ bntSubmit.addEventListener("click", (e) => {
   const xButton = document.createElement("button")
 
   li.classList.add("listNotes")
+  li.classList.add(`listNotes-${ul.childElementCount % 4}`)
   xButton.classList.add("bntDelete")
 
   const xText = document.createTextNode("X")
-  const textH2Li = document.createTextNode(titleInput)
-  const textbodyLi = document.createTextNode(noteBodyInput)
+  const textH2Li = document.createTextNode(title)
+  const textbodyLi = document.createTextNode(stickBody)
 
-  if (titleInput && noteBodyInput) {
+  if (title && stickBody) {
     ul.appendChild(li)
     li.appendChild(titleLi)
     titleLi.appendChild(textH2Li)
@@ -34,18 +32,33 @@ bntSubmit.addEventListener("click", (e) => {
     return
   }
 
+  xButton.addEventListener("click", () => {
+    ul.removeChild(li)
+  })
+
+  insertDb(title, stickBody)
+}
+
+const insertDb = (title, stickBody) => {
   const stickString = window.localStorage.getItem("stick")
   if (!stickString) {
     window.localStorage.setItem("stick", JSON.stringify([]))
   }
   const stickTable = JSON.parse(stickString) || []
   stickTable.push({
-    title: titleInput,
-    body: noteBodyInput,
+    title: title,
+    body: stickBody,
   })
   window.localStorage.setItem("stick", JSON.stringify(stickTable))
-})
+}
 
-const bntDelete = document.querySelector
+const bntSubmit = document.getElementById("bntSubmit")
+
+bntSubmit.addEventListener("click", (e) => {
+  const titleInput = document.getElementById("new-note-title-input").value
+  const noteBodyInput = document.getElementById("new-note-body-input").value
+  createStick(titleInput, noteBodyInput)
+  e.preventDefault()
+})
 
 export default bntSubmit
