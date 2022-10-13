@@ -10,11 +10,11 @@ export const createStick = (title, stickBody) => {
   const li = document.createElement("li")
   const titleLi = document.createElement("h2")
   const bodyLi = document.createElement("p")
-  const xButton = document.createElement("button")
+  const deleteBtn = document.createElement("button")
 
   li.classList.add("listNotes")
   li.classList.add(`listNotes-${ul.childElementCount % colorStick}`)
-  xButton.classList.add("bntDelete")
+  deleteBtn.classList.add("delete")
 
   const xText = document.createTextNode("X")
   const textH2Li = document.createTextNode(title)
@@ -24,17 +24,19 @@ export const createStick = (title, stickBody) => {
     ul.appendChild(li)
     li.appendChild(titleLi)
     titleLi.appendChild(textH2Li)
-    xButton.appendChild(xText)
+    deleteBtn.appendChild(xText)
 
     li.appendChild(bodyLi)
-    li.appendChild(xButton)
+    li.appendChild(deleteBtn)
     bodyLi.appendChild(textbodyLi)
   } else {
     alert("Both Title and body of the note must be provided")
     return
   }
-  xButton.addEventListener("click", () => {
-    ul.removeChild(li)
+  deleteBtn.addEventListener("click", () => {
+    if (confirm(`Are you sure to delete the '${title}' note?`)) {
+      ul.removeChild(li)
+    }
   })
 
   insertDb(title, stickBody)
