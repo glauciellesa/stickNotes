@@ -1,8 +1,7 @@
 const insertStick = (title, stickBody) => {
-  let stickItens = []
   const stickDataString = window.localStorage.getItem("stick")
   if (!stickDataString) {
-    window.localStorage.setItem("stick", JSON.stringify(stickItens)) //JSON.stringify() convert a data array into a string.
+    window.localStorage.setItem("stick", JSON.stringify([])) //JSON.stringify() convert a data array into a string.
   }
   const stickTable = JSON.parse(stickDataString) || []
   stickTable.push({
@@ -18,10 +17,13 @@ const getAllSticks = () => {
   return stickTable
 }
 
-const removeStick = () => {
+const removeStickByTitle = (title) => {
   const stickDataString = window.localStorage.getItem("stick")
-  const stickTable = JSON.parse(stickDataString) || []
-  return stickTable
+  let stickTable = JSON.parse(stickDataString) // Parse converte a JSON to an array data
+  stickTable = stickTable.filter((elem) => {
+    return elem.title !== title
+  })
+  window.localStorage.setItem("stick", JSON.stringify(stickTable))
 }
 
-export default { insertStick, getAllSticks, removeStick }
+export default { insertStick, getAllSticks, removeStickByTitle }

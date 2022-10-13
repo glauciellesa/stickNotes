@@ -4,7 +4,6 @@ import db from "./configDb.js"
 window.addEventListener("DOMContentLoaded", () => {
   const sticks = db.getAllSticks()
   sticks.forEach((stick) => {
-    console.log(stick)
     createStick(stick.title, stick.body)
   })
 })

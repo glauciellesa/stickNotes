@@ -37,7 +37,8 @@ export const createStick = (title, stickBody) => {
   deleteStick.addEventListener("click", () => {
     if (confirm(`Are you sure to delete the '${title}' note?`)) {
       ul.removeChild(li)
-      db.removeStick(title)
+      console.log(titleLi)
+      db.removeStickByTitle(title)
     }
   })
 }

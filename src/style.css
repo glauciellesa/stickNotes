@@ -12,7 +12,7 @@ body {
   color: #fff;
 }
 
-body > * {
+body > *:not(.dialog) {
   margin: 40px 0;
 }
 
