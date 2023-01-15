@@ -4,6 +4,7 @@ import db from "./configDb.js"
 window.addEventListener("DOMContentLoaded", () => {
   const sticks = db.getAllSticks()
   sticks.forEach((stick) => {
+    console.log(stick)
     createStick(stick.title, stick.body)
   })
 })
@@ -16,9 +17,12 @@ bntSubmit.addEventListener("click", (e) => {
   const titleInput = title.value
   const noteBody = document.getElementById("new-note-body-input")
   const noteBodyInput = noteBody.value
-  createStick(titleInput, noteBodyInput)
-  db.insertStick(titleInput, noteBodyInput)
 
+  if (db.insertStick(titleInput, noteBodyInput)) {
+    createStick(titleInput, noteBodyInput)
+  } else {
+    alert("Title already exist!")
+  }
   title.value = ""
   noteBody.value = ""
 })

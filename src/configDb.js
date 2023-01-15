@@ -1,21 +1,14 @@
 const insertStick = (title, stickBody) => {
-  const stickDataString = window.localStorage.getItem("stick") //Vai verificar se no meu localStorage já existe stick
+  const stickDataString = window.localStorage.getItem("stick")
   if (!stickDataString) {
-    //caso não exista eu vou criar já passando para uma forma que pode ser storaged
     window.localStorage.setItem("stick", JSON.stringify([])) //JSON.stringify() convert a data array into a string.
-  } //uma vez existente ou criada vou pegar essas informações e converter para um array que o JS possa manipular
-  const stickTable = JSON.parse(stickDataString) || [] //criada essa esta ou poder adicionar novos elementos a esse storage
-  const hasTitle = stickTable.find((stick) => stick.title == title)
-  console.log(hasTitle)
-  if (hasTitle === undefined) {
-    stickTable.push({
-      title: title,
-      body: stickBody,
-    }) //uma vez adicionado novos elementos preciso converter meu array para um json novamente
-    window.localStorage.setItem("stick", JSON.stringify(stickTable))
-  } else {
-    return true
   }
+  const stickTable = JSON.parse(stickDataString) || []
+  stickTable.push({
+    title: title,
+    body: stickBody,
+  })
+  window.localStorage.setItem("stick", JSON.stringify(stickTable))
 }
 
 const getAllSticks = () => {
