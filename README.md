@@ -25,5 +25,4 @@ I worked with localStorage to manage sticknote storage and to do this I used **J
 
 - Implementation section: - I make - In progress - Done
 - Drag and drop notes into the section.
-
-* Be able to edit notes.
+- Be able to edit notes.
