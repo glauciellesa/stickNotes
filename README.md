@@ -1,8 +1,8 @@
 # Stick-it Notes
 
-StickNotes is a project to learn the **localStorage** web storage API and practice DOM and CSS manipulation.
+StickNotes is a project to learn the **localStorage** web storage API and to practise DOM and CSS manipulation.
 
-I worked with localStorage to manage sticknote storage and to do this I used **JSON stringify** to convert data to string as that is the required format to keep data in localStorage and then **JSON parse( )** to converts my data JSON string into a JavaScript object.
+I worked with localStorage to manage sticknote storage and to do this I used **JSON stringify** to convert data to string as that is the required format to keep data in localStorage and then **JSON parse( )** to convert my data JSON string into a JavaScript object.
 
 <p align="center">
 <img src="./src/img/stickNotes.gif" width="100%" alt="Glaucielle's card">
